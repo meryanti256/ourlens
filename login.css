@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f8f6ff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-container {
+    display: flex;
+    width: 900px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.login-left {
+    flex: 1;
+    background-color: #f2f1fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 350px;
+}
+
+.login-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.login-right h2 {
+    margin-bottom: 20px;
+    color: #403a6e;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #373bb5;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #373bb5;
+}
+
+.error {
+    background-color: #ffe6e6;
+    color: #b30000;
+    border: 1px solid #ff9999;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.form-extra {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.bubble-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 20s infinite linear;
+}
+
+.b1 { width: 120px; height: 120px; background: #4127a9; top: 80%; left: 10%; animation-duration: 25s; }
+.b2 { width: 90px; height: 90px; background: #5194d8; top: 75%; left: 70%; animation-duration: 30s; }
+.b3 { width: 150px; height: 150px; background: #11277f; top: 65%; left: 30%; animation-duration: 20s; }
+.b4 { width: 100px; height: 100px; background: #bae7ff; top: 90%; left: 50%; animation-duration: 28s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-1200px) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .login-left img {
+        max-width: 250px;
+    }
+
+    .login-right {
+        padding: 30px 20px;
+    }
+}
